@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/hive-o/spider/compare/spider-v1.0.0...spider-v1.0.1) (2024-08-02)
+
+
+### Bug Fixes
+
+* set project name ([3cfd3f5](https://github.com/hive-o/spider/commit/3cfd3f567fa31320060b4e61eb4ff051e62d2940))
+
 # 1.0.0 (2024-08-02)
 
 
