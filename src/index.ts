@@ -33,9 +33,11 @@ export class Spider {
   }
 
   private async recordNavigations(page: Page) {
+    const debug = DEBUG('spider:record:navigations');
     const clickableSelector = `[type="submit"], button, [on-click], a`;
     const clickableElements = await page.$$(clickableSelector);
 
+    debug(`detected clickable elements: ${clickableElements.length}`);
     for (const button of clickableElements) {
       await button.click();
 
