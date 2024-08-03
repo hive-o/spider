@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/hive-o/spider/compare/spider-v1.1.0...spider-v1.1.1) (2024-08-03)
+
+
+### Bug Fixes
+
+* add debug logs ([0c84d12](https://github.com/hive-o/spider/commit/0c84d1244203f3ec3f4a683bcb7bb0645c76fc61))
+
 # [1.1.0](https://github.com/hive-o/spider/compare/spider-v1.0.2...spider-v1.1.0) (2024-08-03)
 
 
