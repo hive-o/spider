@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/hive-o/spider/compare/spider-v1.2.0...spider-v1.3.0) (2024-08-03)
+
+
+### Features
+
+* add debugs to spider start ([70bc23c](https://github.com/hive-o/spider/commit/70bc23c88b17792113a5038e0b60e9cb63590b76))
+
 # [1.2.0](https://github.com/hive-o/spider/compare/spider-v1.1.1...spider-v1.2.0) (2024-08-03)
 
 
