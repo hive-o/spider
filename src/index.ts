@@ -62,6 +62,9 @@ export class Spider {
   }
 
   async start(initial_urls: string[]) {
+    const debug = DEBUG('spider:start');
+
+    debug(`starting spider on ${initial_urls.length} urls`);
     await this.weberBrowser.launch();
     const context = this.weberBrowser.context;
 
