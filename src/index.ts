@@ -2,11 +2,11 @@ import { BrowserContext, Navigation, Page, WeberBrowser } from '@hive-o/weber';
 
 export class Spider {
   public readonly navigation: Navigation;
-  public readonly weber_browser: WeberBrowser;
+  public readonly weberBrowser: WeberBrowser;
 
   constructor() {
     this.navigation = Navigation.instance();
-    this.weber_browser = WeberBrowser.instance();
+    this.weberBrowser = WeberBrowser.instance();
   }
 
   private async crawl(address: string, context: BrowserContext) {
@@ -24,14 +24,14 @@ export class Spider {
     });
 
     await page.goto(address);
-    await this.record_navigations(page);
+    await this.recordNavigations(page);
   }
 
-  private async record_navigations(page: Page) {
-    const clickable_selector = `[type="submit"], button, [on-click], a`;
-    const clickable_els = await page.$$(clickable_selector);
+  private async recordNavigations(page: Page) {
+    const clickableSelector = `[type="submit"], button, [on-click], a`;
+    const clickableElements = await page.$$(clickableSelector);
 
-    for (const button of clickable_els) {
+    for (const button of clickableElements) {
       await button.click();
 
       try {
@@ -40,28 +40,28 @@ export class Spider {
         console.warn('Navigation timeout:', error);
       }
 
-      const new_url = new URL(page.url());
+      const newUrl = new URL(page.url());
 
-      if (this.navigation.has(new_url)) {
-        this.navigation.set(new_url);
+      if (this.navigation.has(newUrl)) {
+        this.navigation.set(newUrl);
         await page.goBack();
         continue;
       }
 
-      this.navigation.set(new_url);
-      await this.record_navigations(page);
+      this.navigation.set(newUrl);
+      await this.recordNavigations(page);
       await page.goBack();
     }
   }
 
   async start(initial_urls: string[]) {
-    await this.weber_browser.launch();
-    const context = this.weber_browser.context;
+    await this.weberBrowser.launch();
+    const context = this.weberBrowser.context;
 
     for (const address of initial_urls) {
       await this.crawl(address, context);
     }
 
-    await this.weber_browser.close();
+    await this.weberBrowser.close();
   }
 }

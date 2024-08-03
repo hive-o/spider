@@ -9,7 +9,7 @@
     "quick": "yarn commit && git pull --rebase && git push"
   },
   "dependencies": {
-    "@hive-o/weber": "^1.1.0",
+    "@hive-o/weber": "^1.2.0",
     "tslib": "^2.3.0"
   },
   "publishConfig": {
