@@ -72,6 +72,7 @@ export class Spider {
       await this.crawl(address, context);
     }
 
+    debug('closing weber browser');
     await this.weberBrowser.close();
   }
 }
