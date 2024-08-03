@@ -1,4 +1,5 @@
 import { BrowserContext, Navigation, Page, WeberBrowser } from '@hive-o/weber';
+import * as DEBUG from 'debug';
 
 export class Spider {
   public readonly navigation: Navigation;
@@ -10,6 +11,9 @@ export class Spider {
   }
 
   private async crawl(address: string, context: BrowserContext) {
+    const debug = DEBUG('spider:crawl');
+
+    debug(`starting ${address}`);
     const url = new URL(address);
     this.navigation.set(url);
 
@@ -18,6 +22,7 @@ export class Spider {
     page.on('request', (request) => {
       const newUrl = new URL(request.url());
 
+      debug(`request detected: ${request.url()}`);
       if (!this.navigation.has(newUrl)) {
         this.navigation.set(newUrl);
       }

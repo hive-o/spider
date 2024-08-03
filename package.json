@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hive-o/weber": "^1.2.0",
+    "debug": "^4.3.6",
     "tslib": "^2.3.0"
   },
   "publishConfig": {
@@ -26,6 +27,7 @@
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
     "@theunderscorer/nx-semantic-release": "^2.11.0",
+    "@types/debug": "^4",
     "@types/node": "18.16.9",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
