@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/hive-o/spider/compare/spider-v1.1.1...spider-v1.2.0) (2024-08-03)
+
+
+### Features
+
+* add debugs to record navigations ([2aa82e6](https://github.com/hive-o/spider/commit/2aa82e65031724e7fba5e3cb8c11965196455984))
+
 ## [1.1.1](https://github.com/hive-o/spider/compare/spider-v1.1.0...spider-v1.1.1) (2024-08-03)
 
 
