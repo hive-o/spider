@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/hive-o/spider/compare/spider-v1.0.2...spider-v1.1.0) (2024-08-03)
+
+
+### Features
+
+* refactor spider functions ([0ddafda](https://github.com/hive-o/spider/commit/0ddafdaf179e6651f40c6c0ce00a1a61fdf0f18a))
+
 ## [1.0.2](https://github.com/hive-o/spider/compare/spider-v1.0.1...spider-v1.0.2) (2024-08-02)
 
 
