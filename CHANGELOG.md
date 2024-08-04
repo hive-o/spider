@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/hive-o/spider/compare/spider-v1.5.0...spider-v1.5.1) (2024-08-04)
+
+
+### Bug Fixes
+
+* set context.selector as optional ([b37848e](https://github.com/hive-o/spider/commit/b37848ed8f2c14bb08fdff1adf93784731c32870))
+
 # [1.5.0](https://github.com/hive-o/spider/compare/spider-v1.4.0...spider-v1.5.0) (2024-08-04)
 
 
