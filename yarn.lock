@@ -1732,10 +1732,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hive-o/middleware@npm:^1.6.3":
+  version: 1.6.3
+  resolution: "@hive-o/middleware@npm:1.6.3"
+  dependencies:
+    tslib: "npm:^2.3.0"
+  checksum: 10c0/7eee463a32f9fc3a65cf8551da3deaca8144e397ea6f006bc99476735f11e01e798ce44905d240e1b8d9ac9057bffc18a69cc6d97454bd8f7ecbcf29bf4f2d8f
+  languageName: node
+  linkType: hard
+
 "@hive-o/spider@workspace:.":
   version: 0.0.0-use.local
   resolution: "@hive-o/spider@workspace:."
   dependencies:
+    "@hive-o/middleware": "npm:^1.6.3"
     "@hive-o/weber": "npm:^1.2.0"
     "@nx/eslint": "npm:19.5.6"
     "@nx/eslint-plugin": "npm:19.5.6"
@@ -1748,6 +1758,7 @@ __metadata:
     "@swc/helpers": "npm:~0.5.11"
     "@theunderscorer/nx-semantic-release": "npm:^2.11.0"
     "@types/debug": "npm:^4"
+    "@types/lodash": "npm:^4.17.7"
     "@types/node": "npm:18.16.9"
     "@typescript-eslint/eslint-plugin": "npm:^7.16.0"
     "@typescript-eslint/parser": "npm:^7.16.0"
@@ -1758,6 +1769,7 @@ __metadata:
     eslint: "npm:~8.57.0"
     eslint-config-prettier: "npm:^9.0.0"
     eslint-plugin-perfectionist: "npm:^3.0.0"
+    lodash: "npm:^4.17.21"
     nx: "npm:19.5.6"
     prettier: "npm:^2.6.2"
     tslib: "npm:^2.3.0"
@@ -3241,6 +3253,13 @@ __metadata:
   version: 1.0.5
   resolution: "@types/estree@npm:1.0.5"
   checksum: 10c0/b3b0e334288ddb407c7b3357ca67dbee75ee22db242ca7c56fe27db4e1a31989cb8af48a84dd401deb787fe10cc6b2ab1ee82dc4783be87ededbe3d53c79c70d
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4.17.7":
+  version: 4.17.7
+  resolution: "@types/lodash@npm:4.17.7"
+  checksum: 10c0/40c965b5ffdcf7ff5c9105307ee08b782da228c01b5c0529122c554c64f6b7168fc8f11dc79aa7bae4e67e17efafaba685dc3a47e294dbf52a65ed2b67100561
   languageName: node
   linkType: hard
 

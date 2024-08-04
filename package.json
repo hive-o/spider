@@ -9,8 +9,10 @@
     "quick": "yarn commit && git pull --rebase && git push"
   },
   "dependencies": {
+    "@hive-o/middleware": "^1.6.3",
     "@hive-o/weber": "^1.2.0",
     "debug": "^4.3.6",
+    "lodash": "^4.17.21",
     "tslib": "^2.3.0"
   },
   "publishConfig": {
@@ -28,6 +30,7 @@
     "@swc/helpers": "~0.5.11",
     "@theunderscorer/nx-semantic-release": "^2.11.0",
     "@types/debug": "^4",
+    "@types/lodash": "^4.17.7",
     "@types/node": "18.16.9",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
