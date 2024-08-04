@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/hive-o/spider/compare/spider-v1.4.0...spider-v1.5.0) (2024-08-04)
+
+
+### Features
+
+* add support for injecting middlewares ([a0c719f](https://github.com/hive-o/spider/commit/a0c719fc0589925260413a0f5f36af92d861b175))
+
 # [1.4.0](https://github.com/hive-o/spider/compare/spider-v1.3.0...spider-v1.4.0) (2024-08-03)
 
 
