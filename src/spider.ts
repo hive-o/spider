@@ -3,7 +3,12 @@ import { BrowserContext, Navigation, Page, WeberBrowser } from '@hive-o/weber';
 import * as DEBUG from 'debug';
 import { isEmpty } from 'lodash';
 
-export class Spider extends Middleware<{ selector: string; urls: string[] }> {
+export interface SpiderContext {
+  selector?: string;
+  urls: string[];
+}
+
+export class Spider extends Middleware<SpiderContext> {
   public readonly navigation: Navigation;
   public readonly weberBrowser: WeberBrowser;
 
