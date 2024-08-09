@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/hive-o/spider/compare/spider-v1.6.0...spider-v1.6.1) (2024-08-09)
+
+
+### Bug Fixes
+
+* move the crawl middleware before run ([836d87a](https://github.com/hive-o/spider/commit/836d87ad872971dabdce71c4873654a0d56c9c4d))
+
 # [1.6.0](https://github.com/hive-o/spider/compare/spider-v1.5.1...spider-v1.6.0) (2024-08-09)
 
 
