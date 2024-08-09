@@ -1732,12 +1732,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hive-o/middleware@npm:^1.6.3":
-  version: 1.6.3
-  resolution: "@hive-o/middleware@npm:1.6.3"
+"@hive-o/artax-common@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@hive-o/artax-common@npm:1.0.0"
   dependencies:
     tslib: "npm:^2.3.0"
-  checksum: 10c0/7eee463a32f9fc3a65cf8551da3deaca8144e397ea6f006bc99476735f11e01e798ce44905d240e1b8d9ac9057bffc18a69cc6d97454bd8f7ecbcf29bf4f2d8f
+  checksum: 10c0/2a91457210dac66e2f62d63f28fe36b094a037a7b23ec99e2d67539058009327ccf1ca954b6b295660a9a8d6957958521e93a4174f5faf8b1ca4a69f51b197bf
+  languageName: node
+  linkType: hard
+
+"@hive-o/middleware@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "@hive-o/middleware@npm:1.8.0"
+  dependencies:
+    tslib: "npm:^2.3.0"
+  checksum: 10c0/c8e2ee79ef1900206bae2965554698fb0b67c8e58639743c8ff6d084d30774439f17a0ad06fd362a4ee5f5652881721394e2ce136e814c2d9fd5aac0e8cc777e
   languageName: node
   linkType: hard
 
@@ -1745,7 +1754,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hive-o/spider@workspace:."
   dependencies:
-    "@hive-o/middleware": "npm:^1.6.3"
+    "@hive-o/artax-common": "npm:^1.0.0"
+    "@hive-o/middleware": "npm:^1.8.0"
     "@hive-o/weber": "npm:^1.2.0"
     "@nx/eslint": "npm:19.5.6"
     "@nx/eslint-plugin": "npm:19.5.6"
