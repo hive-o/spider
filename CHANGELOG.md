@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/hive-o/spider/compare/spider-v1.5.1...spider-v1.6.0) (2024-08-09)
+
+
+### Features
+
+* add crawl, navigation as a middleware ([5536aa2](https://github.com/hive-o/spider/commit/5536aa25e465c955ff74bd9554460c5c7a8fc5d0))
+
 ## [1.5.1](https://github.com/hive-o/spider/compare/spider-v1.5.0...spider-v1.5.1) (2024-08-04)
 
 
