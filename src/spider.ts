@@ -1,4 +1,4 @@
-import { Middleware } from '@hive-o/middleware';
+import { Middleware, Next } from '@hive-o/middleware';
 import { BrowserContext, Navigation, Page, WeberBrowser } from '@hive-o/weber';
 import * as DEBUG from 'debug';
 import { isEmpty } from 'lodash';
@@ -28,19 +28,6 @@ export class Spider extends Middleware<SpiderContext> {
       await next();
 
       this.debug(`completed ${context.uri}`);
-    });
-
-    this.use(async (context, next) => {
-      await next();
-
-      this.debug(`launching browser`);
-      await this.weberBrowser.launch();
-
-      const browserContext = this.weberBrowser.context;
-      await this.crawl(context.uri, browserContext);
-
-      this.debug('closing weber browser');
-      await this.weberBrowser.close();
     });
   }
 
@@ -104,5 +91,24 @@ export class Spider extends Middleware<SpiderContext> {
       await this.recordNavigations(page, currentDepth + 1); // Increment depth
       await page.goBack();
     }
+  }
+
+  async run(
+    contextOrNext?: Next | SpiderContext,
+    optionalNext?: Next
+  ): Promise<this> {
+    this.use(async (context, next) => {
+      this.debug(`launching browser`);
+      await this.weberBrowser.launch();
+
+      const browserContext = this.weberBrowser.context;
+      await this.crawl(context.uri, browserContext);
+      await next();
+
+      this.debug('closing weber browser');
+      await this.weberBrowser.close();
+    });
+
+    return super.run(contextOrNext, optionalNext);
   }
 }
