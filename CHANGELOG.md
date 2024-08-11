@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/hive-o/spider/compare/spider-v1.6.1...spider-v1.7.0) (2024-08-11)
+
+
+### Features
+
+* add crawling middleware ([9ca4bba](https://github.com/hive-o/spider/commit/9ca4bbadf4109ea6ab149626e94e812934d0b38f))
+
 ## [1.6.1](https://github.com/hive-o/spider/compare/spider-v1.6.0...spider-v1.6.1) (2024-08-09)
 
 
