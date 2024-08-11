@@ -6,8 +6,6 @@ import { isEmpty } from 'lodash';
 import { SpiderContext } from './context';
 
 export class Spider extends Middleware<SpiderContext> {
-  private readonly debug = DEBUG('spider');
-
   public readonly navigation: Navigation;
   public readonly weberBrowser: WeberBrowser;
 
@@ -18,16 +16,18 @@ export class Spider extends Middleware<SpiderContext> {
     this.weberBrowser = WeberBrowser.instance();
 
     this.use(async (context, next) => {
+      const debug = DEBUG('spider:init');
+
       if (isEmpty(context.uri)) {
         throw new Error('context.uri is empty');
       }
 
-      this.debug(`starting ${context.uri}`);
+      debug(`starting ${context.uri}`);
       context.selectors = ['[type="submit"]', 'button', '[on-click]'];
       context.depth = 2;
       await next();
 
-      this.debug(`completed ${context.uri}`);
+      debug(`completed ${context.uri}`);
     });
   }
 
@@ -37,8 +37,8 @@ export class Spider extends Middleware<SpiderContext> {
     currentDepth = 0
   ) {
     const debug = DEBUG('spider:crawl');
-
     debug(`crawling ${address}`);
+
     const url = new URL(address);
     this.navigation.set(url);
 
@@ -58,12 +58,13 @@ export class Spider extends Middleware<SpiderContext> {
   }
 
   private async recordNavigations(page: Page, currentDepth: number) {
+    const debug = DEBUG('spider:recordNavigations');
+
     if (currentDepth >= (this.context.depth ?? Infinity)) {
       // Check depth limit
       return;
     }
 
-    const debug = DEBUG('spider:record:navigations');
     const clickableSelector = this.context.selectors.join(',');
     const clickableElements = await page.$$(clickableSelector);
 
@@ -98,14 +99,16 @@ export class Spider extends Middleware<SpiderContext> {
     optionalNext?: Next
   ): Promise<this> {
     this.use(async (context, next) => {
-      this.debug(`launching browser`);
+      const debug = DEBUG('spider:browse');
+      debug(`launching browser`);
+
       await this.weberBrowser.launch();
 
       const browserContext = this.weberBrowser.context;
       await this.crawl(context.uri, browserContext);
       await next();
 
-      this.debug('closing weber browser');
+      debug('closing weber browser');
       await this.weberBrowser.close();
     });
 
