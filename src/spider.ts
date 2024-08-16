@@ -1,18 +1,17 @@
+import { Navigation } from '@hive-o/artax-common';
 import { Middleware, Next } from '@hive-o/middleware';
-import { BrowserContext, Navigation, Page, WeberBrowser } from '@hive-o/weber';
+import { BrowserContext, Page, WeberBrowser } from '@hive-o/weber';
 import * as DEBUG from 'debug';
 import { isEmpty } from 'lodash';
 
 import { SpiderContext } from './context';
 
 export class Spider extends Middleware<SpiderContext> {
-  public readonly navigation: Navigation;
   public readonly weberBrowser: WeberBrowser;
 
   constructor() {
     super();
 
-    this.navigation = Navigation.instance();
     this.weberBrowser = WeberBrowser.instance();
 
     this.use(async (context, next) => {
@@ -40,7 +39,7 @@ export class Spider extends Middleware<SpiderContext> {
     debug(`crawling ${address}`);
 
     const url = new URL(address);
-    this.navigation.set(url);
+    this.context.navigation.set(url);
 
     const page = await context.newPage();
 
@@ -48,8 +47,8 @@ export class Spider extends Middleware<SpiderContext> {
       const newUrl = new URL(request.url());
 
       debug(`request detected: ${request.url()}`);
-      if (!this.navigation.has(newUrl)) {
-        this.navigation.set(newUrl);
+      if (!this.context.navigation.has(newUrl)) {
+        this.context.navigation.set(newUrl);
       }
     });
 
@@ -80,15 +79,15 @@ export class Spider extends Middleware<SpiderContext> {
 
       const newUrl = new URL(page.url());
 
-      if (this.navigation.has(newUrl)) {
+      if (this.context.navigation.has(newUrl)) {
         debug(`${newUrl} already crawled`);
-        this.navigation.set(newUrl);
+        this.context.navigation.set(newUrl);
         await page.goBack();
         continue;
       }
 
       debug(`saving new navigation: ${newUrl}`);
-      this.navigation.set(newUrl);
+      this.context.navigation.set(newUrl);
       await this.recordNavigations(page, currentDepth + 1); // Increment depth
       await page.goBack();
     }

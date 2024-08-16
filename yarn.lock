@@ -1732,21 +1732,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hive-o/artax-common@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@hive-o/artax-common@npm:1.0.0"
+"@hive-o/artax-common@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@hive-o/artax-common@npm:1.1.0"
   dependencies:
     tslib: "npm:^2.3.0"
-  checksum: 10c0/2a91457210dac66e2f62d63f28fe36b094a037a7b23ec99e2d67539058009327ccf1ca954b6b295660a9a8d6957958521e93a4174f5faf8b1ca4a69f51b197bf
+  checksum: 10c0/069def67da5d10942229ba62abcbd45236c75e3402ca39841e2a08da626168f109a6de0266b1414a2c482cc4697c28935cfc24cbc771b7246e4139e6a899ac42
   languageName: node
   linkType: hard
 
-"@hive-o/middleware@npm:^1.9.1":
-  version: 1.9.1
-  resolution: "@hive-o/middleware@npm:1.9.1"
+"@hive-o/middleware@npm:^1.10.2":
+  version: 1.10.2
+  resolution: "@hive-o/middleware@npm:1.10.2"
   dependencies:
+    "@hive-o/artax-common": "npm:^1.1.0"
     tslib: "npm:^2.3.0"
-  checksum: 10c0/e8968eef3729cb6ec03f1bedb549b978ddfb2bcb6f2f3280419193646cb1d93d19625f4cfaacdfc99336ebebcb365869c3e42310b8bb80df2f0342de29f33749
+  checksum: 10c0/fd8657a0c6790057e3859f719fc9c22b3149e7ec6928fe2acdcad06f06ec36a251764a2f8595a54bacdafb09b0652c6b64cbaf7c0aeba006ba5c47cc3f80ade2
   languageName: node
   linkType: hard
 
@@ -1754,9 +1755,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hive-o/spider@workspace:."
   dependencies:
-    "@hive-o/artax-common": "npm:^1.0.0"
-    "@hive-o/middleware": "npm:^1.9.1"
-    "@hive-o/weber": "npm:^1.2.0"
+    "@hive-o/artax-common": "npm:^1.1.0"
+    "@hive-o/middleware": "npm:^1.10.2"
+    "@hive-o/weber": "npm:^1.3.0"
     "@nx/eslint": "npm:19.5.6"
     "@nx/eslint-plugin": "npm:19.5.6"
     "@nx/js": "npm:19.5.6"
@@ -1789,13 +1790,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hive-o/weber@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "@hive-o/weber@npm:1.2.0"
+"@hive-o/weber@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@hive-o/weber@npm:1.3.0"
   dependencies:
     puppeteer: "npm:^22.15.0"
     tslib: "npm:^2.3.0"
-  checksum: 10c0/0f9040f08a4781ea03d54fc37ccd061eab0d718e257116823eecf8806075a533fe157808a5b29df5d46cdb8a1c39ec2c363d7e3b1192d1bb8f03715d45cdb11f
+  checksum: 10c0/afda2ad89d7542836f549f32a01a71626410bb54027a45019e87baf1f248e89942959b2038524803fbcd4e70d6b55afc2b4b5fba7ded150f7a691a51391e1ea2
   languageName: node
   linkType: hard
 
