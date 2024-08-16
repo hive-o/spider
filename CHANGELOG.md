@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/hive-o/spider/compare/spider-v1.7.0...spider-v1.8.0) (2024-08-16)
+
+
+### Features
+
+* use context navigation ([1960648](https://github.com/hive-o/spider/commit/19606480842bb3b5075778a2d305cb0a080c82f4))
+
 # [1.7.0](https://github.com/hive-o/spider/compare/spider-v1.6.1...spider-v1.7.0) (2024-08-11)
 
 
