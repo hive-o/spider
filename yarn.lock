@@ -1741,13 +1741,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hive-o/middleware@npm:^1.10.2":
-  version: 1.10.2
-  resolution: "@hive-o/middleware@npm:1.10.2"
+"@hive-o/middleware@npm:^1.10.3":
+  version: 1.10.3
+  resolution: "@hive-o/middleware@npm:1.10.3"
   dependencies:
     "@hive-o/artax-common": "npm:^1.1.0"
     tslib: "npm:^2.3.0"
-  checksum: 10c0/fd8657a0c6790057e3859f719fc9c22b3149e7ec6928fe2acdcad06f06ec36a251764a2f8595a54bacdafb09b0652c6b64cbaf7c0aeba006ba5c47cc3f80ade2
+  checksum: 10c0/faf0a932445cc1c5c2bf1a95aa4186823973f6f27c420ce883242e5759ed8549b751462524879e551134281396ebc5a123d0c7fc97f7462b05c630246b10eda9
   languageName: node
   linkType: hard
 
@@ -1756,7 +1756,7 @@ __metadata:
   resolution: "@hive-o/spider@workspace:."
   dependencies:
     "@hive-o/artax-common": "npm:^1.1.0"
-    "@hive-o/middleware": "npm:^1.10.2"
+    "@hive-o/middleware": "npm:^1.10.3"
     "@hive-o/weber": "npm:^1.3.0"
     "@nx/eslint": "npm:19.5.6"
     "@nx/eslint-plugin": "npm:19.5.6"

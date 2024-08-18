@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@hive-o/artax-common": "^1.1.0",
-    "@hive-o/middleware": "^1.10.2",
+    "@hive-o/middleware": "^1.10.3",
     "@hive-o/weber": "^1.3.0",
     "debug": "^4.3.6",
     "lodash": "^4.17.21",
