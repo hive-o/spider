@@ -1,6 +1,6 @@
 {
   "name": "@hive-o/spider",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "license": "MIT",
   "scripts": {
     "build": "nx build",

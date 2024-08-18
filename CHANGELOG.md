@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/hive-o/spider/compare/spider-v1.8.0...spider-v1.8.1) (2024-08-18)
+
+
+### Bug Fixes
+
+* update middleware version ([d06b4a0](https://github.com/hive-o/spider/commit/d06b4a0937e04e8d6b45e2ba857010df66b709a7))
+
 # [1.8.0](https://github.com/hive-o/spider/compare/spider-v1.7.0...spider-v1.8.0) (2024-08-16)
 
 
