@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/hive-o/spider/compare/spider-v1.8.1...spider-v1.9.0) (2024-08-19)
+
+
+### Features
+
+* add navigation property to context type ([9f2b42c](https://github.com/hive-o/spider/commit/9f2b42c3962a8dc2f1c2f43835cdacf31d02a40a))
+
 ## [1.8.1](https://github.com/hive-o/spider/compare/spider-v1.8.0...spider-v1.8.1) (2024-08-18)
 
 
