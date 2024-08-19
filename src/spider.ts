@@ -1,4 +1,3 @@
-import { Navigation } from '@hive-o/artax-common';
 import { Middleware, Next } from '@hive-o/middleware';
 import { BrowserContext, Page, WeberBrowser } from '@hive-o/weber';
 import * as DEBUG from 'debug';
@@ -22,7 +21,7 @@ export class Spider extends Middleware<SpiderContext> {
       }
 
       debug(`starting ${context.uri}`);
-      context.selectors = ['[type="submit"]', 'button', '[on-click]'];
+      context.selectors = ['[type="submit"]', 'button', '[on-click]', 'a'];
       context.depth = 2;
       await next();
 
