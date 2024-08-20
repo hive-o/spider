@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/hive-o/spider/compare/spider-v1.9.0...spider-v1.9.1) (2024-08-20)
+
+
+### Bug Fixes
+
+* update middleware ([1e9d693](https://github.com/hive-o/spider/commit/1e9d69314fc2326703b2493ae855ec66b84bbdb1))
+
 # [1.9.0](https://github.com/hive-o/spider/compare/spider-v1.8.1...spider-v1.9.0) (2024-08-19)
 
 
