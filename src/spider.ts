@@ -5,7 +5,7 @@ import { isEmpty } from 'lodash';
 
 import { SpiderContext } from './context';
 
-export class Spider extends Middleware<SpiderContext> {
+export class Spider extends Middleware {
   public readonly weberBrowser: WeberBrowser;
 
   constructor() {
