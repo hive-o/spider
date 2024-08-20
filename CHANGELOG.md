@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/hive-o/spider/compare/spider-v1.9.1...spider-v1.10.0) (2024-08-20)
+
+
+### Features
+
+* update common, use artax context, add navigation getter ([31445c9](https://github.com/hive-o/spider/commit/31445c92ad909a210f73d59c92c991f2b0f319b9))
+
 ## [1.9.1](https://github.com/hive-o/spider/compare/spider-v1.9.0...spider-v1.9.1) (2024-08-20)
 
 
