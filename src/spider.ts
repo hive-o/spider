@@ -1,17 +1,20 @@
+import { ArtaxContext, Navigation } from '@hive-o/artax-common';
 import { Middleware, Next } from '@hive-o/middleware';
 import { BrowserContext, Page, WeberBrowser } from '@hive-o/weber';
 import * as DEBUG from 'debug';
 import { isEmpty } from 'lodash';
 
-import { SpiderContext } from './context';
-
 export class Spider extends Middleware {
+  private _navigation: Navigation;
+
   public readonly weberBrowser: WeberBrowser;
 
-  constructor() {
+  constructor(private readonly _timeout = 120000) {
     super();
 
     this.weberBrowser = WeberBrowser.instance();
+
+    this._navigation = Navigation.instance();
 
     this.use(async (context, next) => {
       const debug = DEBUG('spider:init');
@@ -38,7 +41,7 @@ export class Spider extends Middleware {
     debug(`crawling ${address}`);
 
     const url = new URL(address);
-    this.context.navigation.set(url);
+    this._navigation.set(url);
 
     const page = await context.newPage();
 
@@ -46,22 +49,26 @@ export class Spider extends Middleware {
       const newUrl = new URL(request.url());
 
       debug(`request detected: ${request.url()}`);
-      if (!this.context.navigation.has(newUrl)) {
-        this.context.navigation.set(newUrl);
+      if (!this._navigation.has(newUrl)) {
+        this._navigation.set(newUrl);
+
+        // Recursively crawl new URLs found within the current page
+        // if (currentDepth < (this.context.depth ?? Infinity)) {
+        //   this.crawl(newUrl.toString(), context, currentDepth + 1);
+        // }
       }
     });
 
-    await page.goto(address);
-    await this.recordNavigations(page, currentDepth);
+    try {
+      await page.goto(address);
+      await this.recordNavigations(page, currentDepth);
+    } catch (error) {
+      await page.goBack();
+    }
   }
 
   private async recordNavigations(page: Page, currentDepth: number) {
     const debug = DEBUG('spider:recordNavigations');
-
-    if (currentDepth >= (this.context.depth ?? Infinity)) {
-      // Check depth limit
-      return;
-    }
 
     const clickableSelector = this.context.selectors.join(',');
     const clickableElements = await page.$$(clickableSelector);
@@ -71,29 +78,29 @@ export class Spider extends Middleware {
       await button.click();
 
       try {
-        await page.waitForNavigation({ timeout: 10000 });
+        await page.waitForNavigation({ timeout: this._timeout });
       } catch (error) {
         console.warn('Navigation timeout:', error);
       }
 
       const newUrl = new URL(page.url());
 
-      if (this.context.navigation.has(newUrl)) {
+      if (this._navigation.has(newUrl)) {
         debug(`${newUrl} already crawled`);
-        this.context.navigation.set(newUrl);
+        this._navigation.set(newUrl);
         await page.goBack();
         continue;
       }
 
       debug(`saving new navigation: ${newUrl}`);
-      this.context.navigation.set(newUrl);
+      this._navigation.set(newUrl);
       await this.recordNavigations(page, currentDepth + 1); // Increment depth
       await page.goBack();
     }
   }
 
   async run(
-    contextOrNext?: Next | SpiderContext,
+    contextOrNext?: ArtaxContext | Next,
     optionalNext?: Next
   ): Promise<this> {
     this.use(async (context, next) => {
@@ -111,5 +118,9 @@ export class Spider extends Middleware {
     });
 
     return super.run(contextOrNext, optionalNext);
+  }
+
+  get navigation() {
+    return this._navigation;
   }
 }
