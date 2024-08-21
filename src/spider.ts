@@ -40,8 +40,8 @@ export class Spider extends Middleware {
     const debug = DEBUG('spider:crawl');
     debug(`crawling ${address}`);
 
-    const url = new URL(address);
-    this._navigation.set(url);
+    const uri = new URL(address);
+    this._navigation.set(uri);
 
     const page = await context.newPage();
 
