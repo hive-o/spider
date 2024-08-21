@@ -110,7 +110,10 @@ export class Spider extends Middleware {
       await this.weberBrowser.launch();
 
       const browserContext = this.weberBrowser.context;
+
       await this.crawl(context.uri, browserContext);
+      context.navigation = this._navigation.entries();
+
       await next();
 
       debug('closing weber browser');
