@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/hive-o/spider/compare/spider-v1.10.0...spider-v1.10.1) (2024-08-21)
+
+
+### Bug Fixes
+
+* update context.navigation after crawl is finished ([52b9edd](https://github.com/hive-o/spider/commit/52b9edde4c15904fc2550b341f6c5e206613622b))
+
 # [1.10.0](https://github.com/hive-o/spider/compare/spider-v1.9.1...spider-v1.10.0) (2024-08-20)
 
 
