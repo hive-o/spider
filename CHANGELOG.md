@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/hive-o/spider/compare/spider-v1.10.2...spider-v1.11.0) (2024-08-21)
+
+
+### Features
+
+* update artax-common ([887eeaf](https://github.com/hive-o/spider/commit/887eeafc8105f0f4b33d81a358bf0afdca05d365))
+
 ## [1.10.2](https://github.com/hive-o/spider/compare/spider-v1.10.1...spider-v1.10.2) (2024-08-21)
 
 
