@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/hive-o/spider/compare/spider-v1.10.1...spider-v1.10.2) (2024-08-21)
+
+
+### Bug Fixes
+
+* make _navigation readonly ([ddb516f](https://github.com/hive-o/spider/commit/ddb516f720a60ae68f1c5a00b4f5d6863457a86c))
+
 ## [1.10.1](https://github.com/hive-o/spider/compare/spider-v1.10.0...spider-v1.10.1) (2024-08-21)
 
 
