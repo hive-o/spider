@@ -5,7 +5,7 @@ import * as DEBUG from 'debug';
 import { isEmpty } from 'lodash';
 
 export class Spider extends Middleware {
-  private _navigation: Navigation;
+  private readonly _navigation: Navigation;
 
   public readonly weberBrowser: WeberBrowser;
 
